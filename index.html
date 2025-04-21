@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Neural Network Playground</h1>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="layer-control">Layers:</label>
+                    <button id="add-layer">+</button>
+                    <button id="remove-layer">-</button>
+                    <span id="layer-count">3</span>
+                </div>
+                <div class="control-group">
+                    <label for="learning-rate">Learning Rate:</label>
+                    <input type="range" id="learning-rate" min="0.001" max="1" step="0.01" value="0.1">
+                    <span id="lr-value">0.1</span>
+                </div>
+                <div class="control-group">
+                    <button id="train-btn">Train Network</button>
+                    <button id="reset-btn">Reset</button>
+                    <button id="hack-mode-btn">Hack Mode</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="visualization">
+                <div class="network-container" id="network"></div>
+                <div class="data-flow" id="data-flow"></div>
+            </div>
+
+            <div class="interactive-panels">
+                <div class="panel">
+                    <h2>Digit Recognizer</h2>
+                    <div class="digit-canvas-container">
+                        <canvas id="digit-canvas" width="200" height="200"></canvas>
+                        <div class="canvas-controls">
+                            <button id="clear-canvas">Clear</button>
+                            <button id="predict-digit">Predict</button>
+                        </div>
+                        <div class="prediction-result">
+                            <p>Prediction: <span id="prediction-output">-</span></p>
+                            <div class="confidence-bar" id="confidence-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>Gradient Descent</h2>
+                    <div class="gradient-descent-container">
+                        <canvas id="gradient-canvas" width="300" height="300"></canvas>
+                        <div class="gradient-controls">
+                            <button id="start-gradient">Start</button>
+                            <button id="reset-gradient">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel hack-mode-panel" id="hack-panel">
+                    <h2>Hack Mode</h2>
+                    <div class="weight-controls">
+                        <h3>Adjust Weights</h3>
+                        <div id="weight-sliders"></div>
+                    </div>
+                    <div class="bias-controls">
+                        <h3>Adjust Biases</h3>
+                        <div id="bias-sliders"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+            <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2025 Deepak Raj. All Rights Reserved.</p>
+            <p>Designed & Built with ❤️ by Deepak Raj</p>
+        </div>
+    </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
